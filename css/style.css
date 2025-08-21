@@ -1,0 +1,1523 @@
+
+
+
+:root{
+    --white: #fff;
+    --black: #000;
+    --bgColor: #1b4332;
+    --lightGreen: #86c892;
+    --lightGray: #e9e9e9;
+}
+
+
+body{
+    scroll-behavior: smooth;
+    background: var(--lightGray);
+    position: relative;
+}
+
+
+
+
+
+
+
+/* ========================= NAVBAR STYLING ========================= */
+
+#navbar{
+    animation: navbarDropDown 1000ms ease-out;
+}
+
+
+#navbar{
+    background: transparent !important;
+    position: fixed;
+    z-index: 1;
+    backdrop-filter: blur(20px);
+}
+
+
+#navbar .navbar-brand{
+    color: var(--bgColor);
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+
+#navbar #middleLinks a{
+    color: var(--lightGreen);
+    font-weight: 500;
+    transition: 500ms;
+}
+
+
+#navbar #middleLinks .active{
+    color: var(--bgColor);
+}
+
+
+#navbar #middleLinks a:hover{
+    color: var(--bgColor);
+    transition: 350ms;
+}
+
+
+#navbar #endButtons li a{
+    margin: auto 2px;
+    /* font-size: 12px; */
+}
+
+
+#navbar #endButtons li:nth-child(1) a{
+    border-radius: 0px;
+    font-weight: 600;
+    color: var(--lightGreen);
+}
+
+
+
+#navbar #endButtons li:nth-child(2) a{
+    color: var(--white);
+    font-weight: 600;
+    background: var(--bgColor);
+    border-radius: 0px;
+    transition: 500ms;
+}
+
+
+
+#navbar #endButtons li:nth-child(1) a:hover, #navbar #endButtons li:nth-child(2) a:hover {
+    color: var(--bgColor);
+    background: var(--lightGreen);
+    transition: 350ms;
+}
+
+
+
+
+
+
+
+/* ======================= MODAL STYLLING ======================= */
+/* SIGN UP MODAL */
+header #signUpModal .modal-content{
+    border-radius: 0px;
+    background-color: var(--lightGreen);
+}
+
+header #signUpModal .modal-title{
+    color: var(--black);
+    justify-content: center;
+    text-align: center;
+}
+
+header #toggleLoginPwd, header #toggleSignUpPwd{
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+header #signUpModal .modal-content .modal-body input{
+    border-radius: 0px;
+}
+
+
+header #signUpModal .modal-content .modal-body .submit{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    color: var(--white);
+    background: var(--bgColor);
+    text-align: center;
+    font-weight: 600;
+    margin: 10px auto;
+    padding: 10px 30px;
+    width: 80%;
+    border-radius: 0px;
+    transition: 500ms;
+}
+
+
+header #signUpModal .modal-content .modal-body .submit:hover{
+    background-color: var(--white);
+    color: var(--bgColor);
+}
+
+
+header #signUpModal .modal-content .modal-footer .btn{
+    background: #ff0000;
+    color: var(--white);
+    border-radius: 0px;
+    padding: 5px 20px;
+}
+
+
+header #signUpModal #toggleSignUpPwd, header #loginModal #toggleLoginPwd{
+    /* display: inline-block; */
+    float: right;
+}
+
+
+
+
+
+
+
+/* LOGIN MODAL */
+header #loginModal .modal-content{
+    border-radius: 0px;
+    background-color: var(--lightGreen);
+}
+
+
+header #loginModal .modal-content .modal-body input{
+    border-radius: 0px;
+}
+
+
+header #loginModal .modal-content .modal-body .submit{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    color: var(--white);
+    background: var(--bgColor);
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 30px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 0px;
+    transition: 500ms;
+}
+
+
+header #loginModal .modal-content .modal-body .submit:hover{
+    background-color: var(--white);
+    color: var(--bgColor);
+}
+
+
+header #loginModal .modal-content .modal-footer .btn{
+    background: #ff0000;
+    color: var(--white);
+    border-radius: 0px;
+    padding: 5px 20px;
+    transition: 500ms ease;
+}
+
+
+header #loginModal .modal-content .modal-footer .btn:hover{
+    background: var(--white);
+    color: #ff0000;
+}
+
+
+header #loginModal .modal-content .modal-footer a{
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 500ms ease;
+}
+
+header #loginModal .modal-content .modal-footer a:hover{
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+/* ANIMATION */
+
+@keyframes navbarDropDown {
+    0%{
+        transform: translateY(-100px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    
+    #navbar #middleLinks a, #navbar #endButtons a{
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================= END OF NAVBAR STYLING ========================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== FIRST SECTION STYLING ================================ */
+
+
+#home{
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+}
+
+
+#home #firstCol{
+    animation: homeFirsColAnime 1000ms ease-out;
+}
+
+
+#home #firstCol #headertext{
+    color: var(--bgColor);
+    font-weight: bold;
+    /* font-size: 40px; */
+    animation: firstSpanTextAnime 2500ms ease-out;
+}
+
+
+#home #firstCol #headertext span:nth-child(1) {
+    color: var(--black);
+}
+
+
+
+#home #firstCol #paragraph{
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+#home #firstCol .btn{
+    display: flex;
+    justify-self: center;
+    gap: 10px;
+}
+
+
+
+#home #firstCol .btn a{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+#home #firstCol .btn a:nth-child(1){
+    color: var(--white);
+    background: var(--bgColor);
+    padding: 10px 15px;
+    transition: 500ms;
+    text-decoration: none;
+}
+
+
+/* HOVER EFFECT */
+#home #firstCol .btn a:nth-child(1):hover{
+    background: var(--lightGreen);
+    color: var(--black);
+}
+
+
+#home #firstCol .btn a:nth-child(2){
+    color: var(--black);
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: underline;
+    transition: 500ms;
+}
+
+
+/* HOVER EFFECT */
+#home #firstCol .btn a:nth-child(2):hover{
+    color: var(--bgColor);
+    background: transparent;
+}
+
+
+#home #firstCol #bottomTextWrapper{
+    padding: 30px 5px;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* SECOND COLUMN STYLING */
+#home #secondCol{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    animation: homeSecondColAnime 1500ms ease-out;
+}
+
+
+
+#home #secondCol #imgSlice{
+    width: 150px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#home #secondCol #imgSlice img{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: 0;
+    top: 0;
+}
+
+
+#home #secondCol #imgSlice:nth-child(1) img{
+    left: 0%;
+    transition: 500ms ease-in-out;
+}
+
+
+#home #secondCol #imgSlice:nth-child(2) img{
+    left: -160px;
+    transition: 500ms ease-in-out;
+    filter: grayscale(1);
+}
+
+
+#home #secondCol #imgSlice:nth-child(2){
+    transform: translateY(-15px);
+}
+
+
+#home #secondCol #imgSlice:nth-child(3) img{
+    left: -320px;
+    transition: 500ms ease-in-out;
+    filter: grayscale(0) blur(3px);
+}
+
+
+/* HOVER EFFECT */
+#home #secondCol #imgSlice:hover img{
+    transform: scale(1.5);
+    filter: grayscale(0) blur(0px);
+}
+
+
+
+
+
+/* RESPONSIVENESS ACROSS DEVICES */
+@media screen and (max-width: 1024px) {
+
+    #home{
+        padding-top: 20vh;
+        padding-bottom: 15vh;
+    }
+    
+
+    
+    #home #secondCol #imgSlice:nth-child(1) img{
+        left: 0%;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(2) img{
+        left: -160px;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(3) img{
+        left: -300px;
+        transition: 500ms;
+        filter: blur(0);
+    }
+
+    #home #secondCol #imgSlice:hover img{
+        transform: none;
+        filter: grayscale(0) blur(0);
+    }
+}
+
+
+
+/* MEDIUM SCREEN */
+@media screen and (max-width: 860px) {
+
+    #home{
+        padding-top: 20vh;
+        padding-bottom: 10vh;
+    }
+
+    
+    #home #secondCol #imgSlice:nth-child(1) img{
+        left: 0%;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(2) img{
+        left: -155px;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(3) img{
+        left: -310px;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+    #home #secondCol #imgSlice:hover img{
+        transform: none;
+        filter: blur(0);
+    }
+}
+
+
+
+
+/* SMALL SCREENS */
+@media screen and (max-width: 480px) {
+
+    #home{
+        padding-top: 20vh;
+        padding-bottom: 15vh;
+    }
+
+    
+    #home #secondCol #imgSlice:nth-child(1) img{
+        left: 0%;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(2) img{
+        left: -135px;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+
+    #home #secondCol #imgSlice:nth-child(3) img{
+        left: -270px;
+        transition: 500ms;
+        filter: grayscale(0) blur(0);
+    }
+
+    #home #secondCol #imgSlice:hover img{
+        transform: none;
+        filter: blur(0);
+    }
+}
+
+
+
+
+/* ANIMATIONS */
+@keyframes firstSpanTextAnime {
+    0%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes  homeFirsColAnime{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+}
+
+
+@keyframes  homeSecondColAnime{
+    0%{
+        transform: scale(.5);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: scale(1px);
+        opacity: 1;
+    }
+    
+}
+
+
+
+/* ===================== END OF FIRST SECTION STYLING ================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== ABOUT SECTION STYLING ================================ */
+
+#about{
+    padding: 100px;
+    background: linear-gradient(#000000b3), url(/assets/img/galaxyshrunk.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 85vh;
+}
+
+
+#about #contentWrapper{
+    color: var(--white);
+    text-align: center;
+}
+
+
+#about #contentWrapper #headertext{
+    font-size: 50px;
+    color: var(--lightGray);
+}
+
+
+#about #contentWrapper #underline{
+    width: 180px;
+    display: flex;
+    justify-self: center;
+    border: 1px solid var(--bgColor);
+    margin-bottom: 5vh;
+}
+
+
+#about #contentWrapper #aboutHeaderText{
+    font-size: 25px;
+}
+
+
+#about #btnHolder{
+    width: 100%;
+}
+
+
+
+
+#about #btnHolder .btn:nth-child(1), #about #btnHolder .btn:nth-child(2){
+    color: var(--lightGray);
+    background: var(--bgColor);
+    width: 250px;
+    padding: 10px 25px;
+    border-radius: 0px;
+    transition: 500ms;
+}
+
+
+#about #btnHolder .btn:nth-child(1):hover, #about #btnHolder .btn:nth-child(2):hover{
+    background: var(--lightGreen);
+}
+
+
+#about #btnHolder .btn:nth-child(2) span:nth-child(2){
+    display: none;
+}
+
+/* HIDING THE SECOND SPAN */
+#about #btnHolder .btn:nth-child(2) span:nth-child(2){
+    display: none;
+}
+
+
+/* HIDING THE FIRST SPAN ON HOVER */
+#about #btnHolder .btn:nth-child(2):hover span:nth-child(1){
+    display: none;
+}
+
+
+
+/* DISPLAYING THE SECOND SPAN ON HOVER */
+#about #btnHolder .btn:nth-child(2):hover span:nth-child(2){
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* ============= RESPONSIVENESS ACROSS DEVICES ============= */
+
+@media screen and (max-width: 1024px) {
+
+    #about{
+        height: 100%;
+    }
+
+    #about #contentWrapper #underline{
+        display: none;
+    }
+
+    
+    #about #btnHolder .btn:nth-child(1){
+        float: inline-start;
+    }
+
+
+    #about #btnHolder .btn:nth-child(2){
+        float: inline-end;
+    }
+
+
+    #about #btnHolder .btn:nth-child(2):hover span:nth-child(1){
+        display: block;
+    }
+    
+
+    #about #btnHolder .btn:nth-child(2):hover span:nth-child(2){
+        display: none;
+    }
+    
+
+}
+
+
+
+@media screen and (max-width: 860px) {
+    
+    #about{
+        height: 100%;
+    }
+
+    
+    #about #contentWrapper #headertext{
+        font-size: 40px;
+        
+    }
+    
+    
+    #about #contentWrapper #subtext{
+        font-size: 18px;
+    }
+    
+    
+    #about #contentWrapper p{
+        font-size: 12px;
+    }
+
+
+
+    #about #btnHolder .btn:nth-child(1), #about #btnHolder .btn:nth-child(2){
+        width: 200px;
+        padding: 10px 10px;
+        transition: 500ms;
+    }    
+
+    
+    #about #btnHolder .btn:nth-child(1), #about #btnHolder .btn:nth-child(2){
+        font-size: 12px;
+    }
+
+
+    #about #btnHolder .btn:nth-child(2):hover{
+        color: var(--lightGray);
+        background: var(--bgColor);
+        width: 200px;
+        padding: 10px 25px;
+        transition: 500ms;
+    }
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    /* #about{
+        height: 80vh;
+    } */
+
+    #about #btnHolder .btn:nth-child(1), #about #btnHolder .btn:nth-child(2){
+        float: none;
+    }
+
+    
+    #about #btnHolder .btn:nth-child(1), #about #btnHolder .btn:nth-child(2){
+        width: 100px;
+        padding: 5px 20px;
+    }
+
+
+} 
+
+
+
+/* ===================== END OF ABOUT SECTION STYLING ================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== SECOND SECTION STYLING ================================ */
+
+#explore{
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+
+#explore #headertext{
+    text-align: center;
+    color: var(--bgColor);
+}
+
+
+#explore #underline{
+    width: 300px;
+    display: flex;
+    justify-self: center;
+    border: 1px solid var(--bgColor);
+    margin-bottom: 10vh;
+}
+
+
+
+
+#explore .col-md-4{
+    padding: 50px;
+}
+
+
+#explore .card{
+    background: var(--white);
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 20px var(--black); */
+    overflow: auto;
+    transition: 500ms;
+}
+
+
+#explore .card-header{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#explore .card img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+
+#explore .card:hover img{
+    transform: scale(1.5);
+    filter: blur(2px);
+}
+
+
+#explore .card-header h1{
+    color: #f7e5d9;
+    position: absolute;
+    display: none;
+    transition: 500ms;
+}
+
+#explore .card-header:hover h1{
+    display: flex;
+    z-index: 1;
+}
+
+
+#explore .card .card-body{
+    border: none;
+    text-align: center;
+}
+
+
+#explore .card-body button{
+    color: var(--white);
+    background: var(--bgColor);
+    padding: 10px 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1.6px solid var(--bgColor);
+    transition: 500ms;
+}
+
+
+#explore .card-body button:hover{
+    background: var(--white);
+    color: var(--bgColor);
+}
+
+
+
+
+
+/* RESPONSIVENESS ACROSS DEVICES */
+
+@media screen and (max-width: 1024px) {
+
+    #explore .card-header h1{
+        display: none;
+    }
+
+    
+    #explore .col-md-4{
+        padding: 10px;
+    }
+
+    #explore .card-header:hover h1{
+        display: none;
+    }
+
+    #explore .card:hover img{
+        transform: none;
+        filter: none;
+    }
+
+
+    #explore #underline{
+        display: none;
+    }
+
+
+    #explore .card-body h3{
+        font-size: 25px;
+    }
+
+}    
+    
+
+
+
+
+
+@media screen and (max-width: 860px) {
+    
+    #explore .card{
+        width: 100%;
+    }
+    
+    #explore .col-md-4{
+        padding: 5px;
+    }
+
+    #explore .card-body h3{
+        font-size: 20px;
+    }
+    
+    
+    #explore .card-body button{
+        width: 100%;
+        font-size: 15px;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    #explore .card{
+        width: 100%;
+    }
+    
+    #explore .col-6{
+        padding: 50px;
+    }
+
+
+    #explore .card-body h3{
+        font-size: 18px;
+    }
+
+    #explore .card-body p{
+        display: none;
+    }
+    
+    
+    #explore .card-body button{
+        width: 100%;
+        font-size: 15px;
+    }
+
+    
+    #explore .card img{
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        transition: 500ms;
+    }
+
+}
+
+
+    
+/* ===================== END OF FIRST SECTION STYLING ================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== CONTACT SECTION STYLING ================================ */
+
+#contact{
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    background: var(--white);
+}
+
+
+#contact #headertext{
+    color: var(--bgColor);
+}
+
+
+#contact .row{
+    padding-top: 10vh;
+}
+
+
+#contact #underline{
+    justify-self: center;
+    width: 150px;
+    border: 1px solid var(--bgColor);
+}
+
+
+
+
+/* CAROUSEL STYLING */
+#contact .carousel .carousel-inner{
+    border-radius: 20px;
+}
+
+#contact .carousel-inner img{
+    width: 100%;
+    height: 60vh;
+}
+
+
+#contact .carousel-caption{
+    color: var(--lightGray);
+    text-shadow: 5px 5px 0px var(--black), 2px 2px 2px var(--black);
+}
+
+
+#contact .carousel-indicators button{
+    border-radius: 100%;
+    padding: 2px;
+    margin: auto 10px;
+    width: 10px;
+    height: 10px;
+}
+
+
+
+
+
+
+
+
+
+#contact #form textarea{
+    height: 200px;
+}
+
+
+#contact #form #textarea label{
+    padding: 10px;
+}
+
+
+#contact #form .btn{
+    display: block;
+    justify-self: center;
+    color: var(--lightGray);
+    font-weight: 600;
+    background: var(--bgColor);
+    padding: 10px 30px;
+    width: 50%;
+    border-radius: 0px;
+    border: none;
+    transition: 500ms;
+}
+
+
+#contact #form .btn:hover{
+    background: var(--lightGreen);
+    color: var(--black);
+}
+
+
+#contact #form i{
+    transition: 500ms;
+}
+
+#contact #form .btn:hover i{
+    transform: scale(2);
+    padding-left: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    
+    
+    #contact #underline{
+        display: none;
+    }
+    
+    
+    #contact .carousel-inner img{
+        height: 40vh;
+    }
+
+    #contact #form .btn:hover i{
+        transform: translateX(0px);
+        padding-left: 0px;
+    }
+
+    
+}
+
+
+@media screen and (max-width: 760px) {
+    #contact #form .btn{
+        width: 100%;
+    }
+
+    
+    #contact .carousel-caption p{
+        display: none;        
+    }
+}
+
+
+
+
+
+/* ================= END OF CONTACT SECTION STYLING ============================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= END OF FOOTER SECTION STYLING ============================ */
+
+
+footer{
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+
+footer #headertext{
+    color: var(--bgColor);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+footer ul{
+    list-style: none;
+}
+
+
+footer li{
+    margin: 5px 0px;
+}
+
+
+footer ul a{
+    color: var(--bgColor);
+    font-weight: 600;
+    font-size: 25px;
+    text-decoration: none;
+    transition: 500ms;
+}
+
+footer li .fa-square-instagram{
+    color: #f5165d;
+}
+
+footer ul a:hover{
+    color: var(--lightGreen);
+}
+
+
+footer ul i{
+    transition: 500ms;
+}
+
+
+footer ul a:hover i{
+    transform: scale(1.5);
+    padding-right: 10px;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    
+    footer ul a:hover{
+        color: var(--bgColor);
+    }
+
+    
+    
+    footer ul a:hover i{
+        transform: none;
+        padding-right: 0px;
+    }
+    
+
+
+
+
+
+}
+
+
+/* ================= FOOTER SECTION STYLING ============================ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================== OTHER PAGES STYLING ====================================================== */
+#signUpHeadertext{
+    margin: 100px auto;
+    justify-items: center;
+}
+
+#signUpHeadertext h1{
+    color: var(--bgColor);
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+
+#signUpHeadertext p{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+    
+
+#logoutDiv{
+    display: flex;
+    justify-content: center;
+}
+
+#logoutDiv #logoutBtn{
+    color: var(--white);
+    background: #ff0000;
+    padding: 15px 10px;
+    width: 50%;
+    border-radius: 0px;
+    margin: 10rem 3rem;
+    font-weight: 600;
+    transition: 500ms ease;
+}
+
+
+#logoutDiv #logoutBtn:hover{
+    background: #f5165d;
+}
+
+
+
+#denied{
+    font-size: 50px;
+    animation: denied 500ms 1000ms ease-out;
+}
+
+
+
+@keyframes denied {
+    0%{
+        transform: translateX(20px);
+    }
+    20%{
+        transform: translateX(-20px);
+    }
+    40%{
+        transform: translateX(20px);
+    }
+    60%{
+        transform: translateX(-20px);
+    }
+    80%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

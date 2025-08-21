@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunaris</title>
+
+    
+    <!-- LINKS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- END OF LINKS -->
+</head>
+
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="60">
+
+
+    <!-- NAVBAR -->
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+            <div class="container">
+                <!-- NAVBAR BRAND -->
+                <a class="navbar-brand" href="#">Lunaris</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- MIDDLE LINKS -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul id="middleLinks" class="navbar-nav m-auto">
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#explore">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact Us</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- END BUTTONS -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul id="endButtons" class="navbar-nav ms-auto">
+                        
+                        <!-- SIGN IN BUTTON -->
+                        <li class="nav-item">
+                            <a id="signUp" data-bs-toggle="modal" data-bs-target="#signUpModal" type="button" class="nav-link btn">
+                                Sign Up <i class="fa-solid fa-user-plus"></i>
+                            </a>
+                        </li>
+
+                        <!-- SIGN UP BUTTON -->
+                        <li class="nav-item">
+                            <a id="login" data-bs-toggle="modal" data-bs-target="#loginModal" class="signIn nav-link btn">
+                                Login <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+
+
+
+        <!-- SIGNUP MODAL -->
+        <div class="modal fade" id="signUpModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+
+                        <button type="button" class="btn float-end" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-xmark fa-2x text-danger"></i>
+                        </button>
+                        <h4 class="modal-title text-center my-5">
+                            Sign up <i class="fa-solid fa-user-plus"></i>
+                        </h4>
+
+                        
+                        <!-- SIGN UP FORM -->
+                        <form action="#" id="signUpForm" class="was-validated" onsubmit="signUp(event)">
+
+                            <div class="form-floating">
+                                <input id="fullname" type="text" class="form-control" placeholder="full Name" name="fullname" autocomplete="additional-name" required>
+                                <label for="fullname">Name</label>
+                            </div>
+                                
+
+                            <div class="form-floating my-5">
+                                <input type="email" class="form-control" id="signUpEmail" placeholder="Enter email" name="email" required>
+                                <label for="signUpEmail">Email
+                                    <i class="fa-solid fa-at"></i>
+                                </label>
+                            </div>
+                                
+
+                            <!-- PASSWORD -->
+                            <div class="form-floating my-5">
+                                <input type="password" class="form-control mb-2" id="signUpPwd" name="pwd" required>
+                                <label for="signUpPwd">Password
+                                    <i class="fa-solid fa-lock"></i>
+                                </label>
+
+                                <!-- SHOW/HIDE PASSWORDS -->
+                                <span id="toggleSignUpPwd" class="toggleSignUpPwd fa-solid fa-eye-slash"></span>
+                            </div>
+                            
+                            <!-- CONFIRM PASSWORD -->
+                            <div class="form-floating my-5">
+                                <input type="password" class="form-control" id="conSignUpPwd" placeholder="" name="conPwd" required>
+                                <label for="conSignUpPwd">Confirm Password
+                                    <i class="fa-solid fa-lock"></i>
+                                </label>
+                            </div>
+                                
+                            <!-- SUBMIT -->
+                            <button type="submit" class="btn submit">Sign up</i></button>
+
+                            <!-- SIGN UP PROMPT MESSAGE -->
+                            <div id="signUpMessage" class="my-4 px-4 py-4"></div>
+                                
+                        </form>
+                        <!-- END OF SIGNUP FORM -->
+                    </div>
+
+                    <!-- MODAL FOOTER -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+        <!-- LOGIN MODAL -->
+        <div class="modal fade" id="loginModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        
+                        <button type="button" class="btn float-end" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-xmark fa-2x text-danger"></i>
+                        </button>
+
+                        <h4 class="modal-title text-center my-5">
+                            Login <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </h4>
+
+                        <!-- LOGIN FORM -->
+                        <form onsubmit="login(event)" action="#" class="was-validated">
+                            <!-- EMAIL -->
+                            <div class="form-floating my-4">
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="email" required>
+                                <label for="loginEmail">Email
+                                    <i class="fa-solid fa-at"></i>
+                                </label>
+                            </div>
+                            
+                            <!-- PASSWORD -->
+                            <div class="form-floating my-4">
+                                <input type="password" class="form-control" id="loginPwd" placeholder="" name="email" required>
+                                <label for="loginPwd">Password
+                                    <i class="fa-solid fa-lock"></i>
+                                </label>
+                                
+                                <!-- SHOW/HIDE PASSWORDS -->
+                                <span id="toggleLoginPwd" class="toggleLoginPwd fa-solid fa-eye-slash mt-2"></span>
+                            </div>
+
+
+                            <!-- SUBMIT -->
+                            <button type="submit" class="btn submit my-5">Login</i></button>
+
+
+                            
+                            <!-- LOGIN PROMPT MESSAGE -->
+                            <div id="loginMessage" class="my-4 px-4 py-4"></div> 
+                        </form>
+                    </div>
+                    
+                    <!-- MODAL FOOTER -->
+                    <div class="modal-footer">
+                        <!-- FORGOT PWD -->
+                        <a href="#">Forgot Password?</a>
+
+                        <!-- CANCEL BUTTON -->
+                        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </header>
+        <!-- END OF NAVBAR -->
+
+
+
+
+
+
+
+
+    <!-- MAIN BODY CONTENTS -->
+    <main>
+        
+        <!-- FIRST SECTION -->
+        <section id="home" class="container">
+            <div class="row">
+                <!-- first column -->
+                <div id="firstCol" class="col-lg-6 col-md-6">
+                    
+                    <!-- header text -->
+                    <h1 id="headertext" class="text-center">
+                        <span>Take A Boost For Your</span> <span>Product</span>
+                    </h1>
+                    <!-- paragraph -->
+                    <p id="paragraph">
+                        Space is the unlimited or incalculably vast three-dimensional realm that extends in all directions, serving as the stage in which all matter exists and every event in the physical universe unfolds. It encompasses not only the observable universe filled with galaxies, stars, and planets, but also the invisible structures and forces
+                    </p>
+
+                    <button class="btn">
+                        <a href="#">Start free trial</a>
+
+                        <a href="#">
+                            More About Us <div class="fas fa-angle-right"></div>
+                        </a>
+                    </button>
+
+                    <div id="bottomTextWrapper" class="row">
+                        <div id="bottomText" class="col-6 text-center">
+                            <h5>1200+</h5> <p>Happy Companies</p>
+                        </div>
+                        
+                        <div id="bottomText" class="col-6 text-center">
+                            <h5>600+</h5> <p>Work Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- SECOND COLUMN/SPLIT IMAGES -->
+                <div id="secondCol" class="col-lg-6 col-md-6">
+
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END OF FIRST SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ABOUT SECTION -->
+        <div id="about">
+
+            <div id="contentWrapper" class="container-fluid">
+                <!-- HEADER TEXT -->
+                <h1 id="headertext">About Us</h1>
+                <div id="underline"></div>
+
+                <!-- SUB HEADER TEXT -->
+                <h4 id="aboutHeaderText" class="mb-4 lead text-center">Every <b>Experience</b> Begins With a Feeling</h4>
+                <!-- PARAGRAPH -->
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt accusantium consectetur illo, at facere incidunt expedita eligendi labore. Eos ipsum magni veniam dolores quis exercitationem animi vel corrupti modi fuga! Accusantium dolorum, at fugiat nobis minima quam culpa quas ipsam aspernatur, animi unde voluptatem obcaecati cumque voluptates aperiam, reprehenderit molestiae expedita asperiores iusto</p>
+
+                <!-- BUTTON -->
+                 <div id="btnHolder">
+                    <a class="btn my-1">More</a>
+
+                    <a href="#contact" class="btn my-1">
+                        <span>Let's Talk </span>
+                        
+                        <span>
+                            Get In Touch 
+                            <i class="fa-sharp-duotone fa-solid fa-comment"></i>
+                        </span>
+                    </a>
+                 </div>
+            </div>
+        </div>
+        <!-- END OF  ABOUT SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- EXPLORE SECTION -->
+         <section id="explore" class="container">
+            <!--HEADER TEXT  -->
+            <h1 id="headertext">Explore The Universe</h1>
+            <div id="underline"></div>
+            
+            
+            <!-- ROW AND COLUMNS -->
+            <div id="exploreCards" class="row">
+
+                <!-- FIRST CARD -->
+                <div id="firstCol" class="col-lg-4 col-md-4">
+                    <!-- CARD HEADER/IMAGE -->
+                    <div id="firstCard" class="card">
+                        <div class="card-header">
+                            <h1 class="text-center">Our Galaxy</h1>
+                            <img loading="lazy" class="img-fluid" src="/assets/img/milkywayGalaxy.jpg" alt="" id="cardImg">
+                        </div>
+                        
+                        <!-- CARD BODY -->
+                        <div class="card-body">
+                            <h3 id="title">Milky Way Galaxy</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem.</p>
+                            <button class="btn">Learn More
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- SECOND CARD -->
+                <div id="secondCol" class="col-lg-4 col-md-4">
+                    <!-- CARD HEADER/IMAGE -->
+                    <div id="secondCard" class="card">
+                        <div class="card-header">
+                            <h1 class="text-center">Neighbouring Galaxy</h1>
+                            <img loading="lazy" class="img-fluid" src="/assets/img/andromedaGalaxy.jpg" alt="" id="cardImg">
+                        </div>
+                        
+                        <!-- CARD BODY -->
+                        <div class="card-body">
+                            <h3 id="title">Andromeda</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem.</p>
+                            <button class="btn">Learn More
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- THIRD CARD -->
+                <div id="thirdCol" class="col-lg-4 col-md-4">
+                    <!-- CARD HEADER/IMAGE -->
+                    <div id="thirdCard" class="card">
+                        <div class="card-header">
+                            <h1 class="text-center">Planet Eater</h1>
+                            <img loading="lazy" class="img-fluid" src="/assets/img/blackhole.jpg" alt="" id="cardImg">
+                        </div>
+                        
+                        <!-- CARD BODY -->
+                        <div class="card-body">
+                            <h3 id="title">Sagittarius A</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem.</p>
+                            <button class="btn">Learn More
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- END OF ROW -->
+        </section>
+        <!-- END OF EXPLORE SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <!-- CONTACT SECTION -->
+         <section id="contact">
+             
+            <div id="contactContainer" class="container">
+                <!-- HEADER TEXT -->
+                <h1 id="headertext" class="text-center">Let's Talk <i class="fa-sharp-duotone fa-solid fa-comment"></i></h1>
+                <!-- UNDERLINE -->
+                <div id="underline"></div>
+                
+                
+                <div class="row">
+                    <div id="carouselColumn" class="col-xl-6 col-lg-12 col-sm-12">
+
+                        <!-- CAROUSEL -->
+                        <div id="demo" class="carousel slide my-4" data-bs-ride="carousel">
+
+                            <!-- Indicators/dots -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                            </div>
+
+                            <!-- IMAGES SLIDESHOW -->
+                            <div id="firstCarousel" class="carousel-inner">
+                                <!-- FIRST CAROUSEL IMAGE -->
+                                <div class="carousel-item active">
+                                    <img src="/assets/img/milkywayGalaxy.jpg" alt="Los Angeles" class="">
+                                    <div class="carousel-caption">
+                                        <h3>Our Galxay</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odit sapiente officia animi aliquid quod tempore eveniet repellat id libero ad iusto, iure amet mollitia reiciendis! Ut quos consectetur amet.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- SECOND CAROUSEL IMAGE -->
+                                <div class="carousel-item">
+                                    <img loading="lazy" src="/assets/img/andromedaGalaxy.jpg" alt="Chicago" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <h3>Andromeda</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odit sapiente officia animi aliquid quod tempore eveniet repellat id libero ad iusto, iure amet mollitia reiciendis! Ut quos consectetur amet.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- THIRD CAROUSEL IMAGE -->
+                                <div class="carousel-item">
+                                    <img loading="lazy" src="/assets/img/blackhole.jpg" alt="New York" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <h3>Sagitarrius A</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odit sapiente officia animi aliquid quod tempore eveniet repellat id libero ad iusto, iure amet mollitia reiciendis! Ut quos consectetur amet.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+
+                                <!-- FOURTH CAROUSEL IMAGE -->
+                                <div class="carousel-item">
+                                    <img loading="lazy" src="/assets/img/spaceBg.jpg" alt="New York" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <h3>Law of Multiverse</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odit sapiente officia animi aliquid quod tempore eveniet repellat id libero ad iusto, iure amet mollitia reiciendis! Ut quos consectetur amet.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            <!-- CONTROLS/ICONS -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- FORM -->
+                    <div id="form" class="col-xl-6 col-lg-12 col-sm-12 my-4">
+                        <form action="#" class="was-validated">
+
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="fullname" placeholder="full Name" name="fullname" required>
+                                <label for="fullname">Full name</label>
+                                
+                            </div>
+                                
+
+                            <div class="form-floating my-4">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                                <label for="pwd">Email
+                                    <i class="fa-solid fa-at"></i>
+                                </label>
+
+                            </div>
+                                
+
+                            <div id="textarea" class="form-floating">
+                                <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                                <label for="comment">Comment...</label>
+
+                                <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-5">GET IN TOUCH <i class="fa-solid fa-envelope"></i></button>
+                        </form>
+                    </div>
+                    <!-- END OF FORM -->
+
+                </div>
+                <!-- END OF ROW -->
+                
+            </div>
+        </section>
+        <!-- END OF CONTACT SECTION -->
+    </main>
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <h1 id="headertext">Join us on</h1>
+
+        <div class="mb-2" id="underline"></div>
+
+        <ul id="links">
+            
+            <li>
+                <a href="https://www.linkedin.com/in/gerald-bright-294aa71b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                    <i class="fa-brands fa-linkedin text-primary"></i> Linkedin
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://x.com/swaggat_dev?s=21" target="blank">
+                    <i class="fa-brands fa-square-x-twitter text-dark"></i> Twitter
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/geraldthedev?igsh=MWE1ejhpa21sNGVlMQ%3D%3D&utm_source=qr" target="_blank">
+                    <i class="fa-brands fa-square-instagram"></i> Instagram
+                </a>
+            </li>
+
+        </ul>
+            
+    </footer>
+    <!-- END OF FOOTER -->
+
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+    <!-- Firebase App (core) -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <!-- Firebase Analytics (optional) -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics-compat.js"></script>
+
+    <!-- MAIN JS -->
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/userpage.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
