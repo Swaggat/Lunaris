@@ -102,7 +102,7 @@ body{
 /* SIGN UP MODAL */
 header #signUpModal .modal-content{
     border-radius: 0px;
-    background-color: var(--lightGreen);
+    background-color: var(--lightGray);
 }
 
 header #signUpModal .modal-title{
@@ -138,7 +138,7 @@ header #signUpModal .modal-content .modal-body .submit{
 
 
 header #signUpModal .modal-content .modal-body .submit:hover{
-    background-color: var(--white);
+    background-color: var(--lightGreen);
     color: var(--bgColor);
 }
 
@@ -148,6 +148,14 @@ header #signUpModal .modal-content .modal-footer .btn{
     color: var(--white);
     border-radius: 0px;
     padding: 5px 20px;
+    transition: 500ms ease-out;
+}
+
+
+header #signUpModal .modal-content .modal-footer .btn:hover{
+    background: var(--lightGray);
+    color: #ff0000;
+
 }
 
 
@@ -165,7 +173,7 @@ header #signUpModal #toggleSignUpPwd, header #loginModal #toggleLoginPwd{
 /* LOGIN MODAL */
 header #loginModal .modal-content{
     border-radius: 0px;
-    background-color: var(--lightGreen);
+    background-color: var(--lightGray);
 }
 
 
@@ -191,7 +199,7 @@ header #loginModal .modal-content .modal-body .submit{
 
 
 header #loginModal .modal-content .modal-body .submit:hover{
-    background-color: var(--white);
+    background-color: var(--lightGreen);
     color: var(--bgColor);
 }
 
@@ -206,7 +214,7 @@ header #loginModal .modal-content .modal-footer .btn{
 
 
 header #loginModal .modal-content .modal-footer .btn:hover{
-    background: var(--white);
+    background: var(--lightGray);
     color: #ff0000;
 }
 
@@ -216,14 +224,39 @@ header #loginModal .modal-content .modal-footer a{
     font-weight: 600;
     text-decoration: none;
     transition: 500ms ease;
+    cursor: pointer;
 }
 
 header #loginModal .modal-content .modal-footer a:hover{
-    color: var(--white);
+    color: #ff0000;
 }
 
 
 
+
+
+
+/* PASSWORD RESET STYLING */
+header #pwdResetModal .modal-content{
+    background: var(--lightGray);
+}
+
+
+header #pwdResetModal .modal-content .submit{
+    font-weight: 600;
+    color: var(--white);
+    background: var(--bgColor);
+    justify-self: center;
+    transition: 500ms ease-out;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 0px;
+}
+
+
+header #pwdResetModal .modal-content .submit:hover{
+    background: var(--lightGreen);
+}
 
 
 
@@ -397,16 +430,19 @@ header #loginModal .modal-content .modal-footer a:hover{
 
 
 /* SECOND COLUMN STYLING */
-#home #secondCol{
+#home #secondCol, #home #hiddenCol{
     display: flex;
     justify-content: center;
     gap: 10px;
     animation: homeSecondColAnime 1500ms ease-out;
 }
 
+#home #hiddenCol{
+    display: none;
+}
 
 
-#home #secondCol #imgSlice{
+#home #secondCol #imgSlice, #home #hiddenCol #imgSlice{
     width: 150px;
     height: 350px;
     overflow: hidden;
@@ -415,7 +451,7 @@ header #loginModal .modal-content .modal-footer a:hover{
     margin-top: 15px;
 }
 
-#home #secondCol #imgSlice img{
+#home #secondCol #imgSlice img, #home #hiddenCol #imgSlice img{
     position: absolute;
     height: 100%;
     width: auto;
@@ -424,25 +460,25 @@ header #loginModal .modal-content .modal-footer a:hover{
 }
 
 
-#home #secondCol #imgSlice:nth-child(1) img{
+#home #secondCol #imgSlice:nth-child(1) img, #home #hiddenCol #imgSlice:nth-child(1) img{
     left: 0%;
     transition: 500ms ease-in-out;
 }
 
 
-#home #secondCol #imgSlice:nth-child(2) img{
+#home #secondCol #imgSlice:nth-child(2) img, #home #hiddenCol #imgSlice:nth-child(2) img{
     left: -160px;
     transition: 500ms ease-in-out;
     filter: grayscale(1);
 }
 
 
-#home #secondCol #imgSlice:nth-child(2){
+#home #secondCol #imgSlice:nth-child(2), #home #hiddenCol #imgSlice:nth-child(2){
     transform: translateY(-15px);
 }
 
 
-#home #secondCol #imgSlice:nth-child(3) img{
+#home #secondCol #imgSlice:nth-child(3) img, #home #hiddenCol #imgSlice:nth-child(3) img{
     left: -320px;
     transition: 500ms ease-in-out;
     filter: grayscale(0) blur(3px);
@@ -450,7 +486,7 @@ header #loginModal .modal-content .modal-footer a:hover{
 
 
 /* HOVER EFFECT */
-#home #secondCol #imgSlice:hover img{
+#home #secondCol #imgSlice:hover img, #home #hiddenCol #imgSlice:hover img{
     transform: scale(1.5);
     filter: grayscale(0) blur(0px);
 }
@@ -539,32 +575,41 @@ header #loginModal .modal-content .modal-footer a:hover{
 @media screen and (max-width: 480px) {
 
     #home{
-        padding-top: 20vh;
+        padding-top: 10vh;
         padding-bottom: 15vh;
     }
 
+    #home #secondCol{
+        display: none;
+    }
     
-    #home #secondCol #imgSlice:nth-child(1) img{
+
+    #home #hiddenCol{
+        display: flex;
+        padding-bottom: 10vh;
+    }
+    
+    #home #hiddenCol #imgSlice:nth-child(1) img{
         left: 0%;
         transition: 500ms;
         filter: grayscale(0) blur(0);
     }
 
 
-    #home #secondCol #imgSlice:nth-child(2) img{
+    #home #hiddenCol #imgSlice:nth-child(2) img{
         left: -135px;
         transition: 500ms;
         filter: grayscale(0) blur(0);
     }
 
 
-    #home #secondCol #imgSlice:nth-child(3) img{
+    #home #hiddenCol #imgSlice:nth-child(3) img{
         left: -270px;
         transition: 500ms;
         filter: grayscale(0) blur(0);
     }
 
-    #home #secondCol #imgSlice:hover img{
+    #home #hiddenCol #imgSlice:hover img{
         transform: none;
         filter: blur(0);
     }

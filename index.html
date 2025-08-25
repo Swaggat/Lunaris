@@ -34,10 +34,10 @@
                         <a class="nav-link active" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#explore">Explore</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#explore">Explore</a>
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
@@ -197,7 +197,7 @@
                     <!-- MODAL FOOTER -->
                     <div class="modal-footer">
                         <!-- FORGOT PWD -->
-                        <a href="#">Forgot Password?</a>
+                        <a data-bs-toggle="modal" data-bs-target="#pwdResetModal">Forgot Password?</a>
 
                         <!-- CANCEL BUTTON -->
                         <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
@@ -207,6 +207,48 @@
             </div>
         </div>
 
+
+
+         <!-- FORGOT PASSWORD MODAL -->
+        <div class="modal fade" id="pwdResetModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        
+                        <button type="button" class="btn float-end" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-xmark fa-2x text-danger"></i>
+                        </button>
+
+                        <h4 class="modal-title text-center my-5">
+                            Reset Password <i class="fa-solid fa-recycle"></i>
+                        </h4>
+
+                        <!-- LOGIN FORM -->
+                        <form action="#" class="">
+                            <!-- EMAIL -->
+                            <div class="form-floating my-4">
+                                <input type="email" class="form-control" id="pwdResetEmail" placeholder="Enter email" name="email" >
+                                <label for="loginEmail">Email
+                                    <i class="fa-solid fa-at"></i>
+                                </label>
+                            </div>
+
+                            <!-- SUBMIT -->
+                            <button type="submit" class="btn submit my-3">Submit</i></button>
+
+
+                            
+                            <!-- RESET PROMPT MESSAGE -->
+                            <div id="pwdResetMessage" class="my-3 px-4 py-3"></div> 
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- FORGOT PASSOWRD MODAL -->
 
 
     </header>
@@ -225,7 +267,25 @@
         <!-- FIRST SECTION -->
         <section id="home" class="container">
             <div class="row">
-                <!-- first column -->
+
+                
+                <!-- HIDDEN COLUMN WITH SPLIT IMAGES -->
+                <div id="hiddenCol" class="col-lg-6 col-md-6 hiddenCol">
+
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                    <div id="imgSlice">
+                        <img fetchpriority="high" src="/assets/img/spaceBg.jpg" alt="">
+                    </div>
+                </div>
+
+                
+
+                <!-- FIRST COLUMN -->
                 <div id="firstCol" class="col-lg-6 col-md-6">
                     
                     <!-- header text -->
@@ -585,19 +645,19 @@
             
             <li>
                 <a href="https://www.linkedin.com/in/gerald-bright-294aa71b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                    <i class="fa-brands fa-linkedin text-primary"></i> Linkedin
+                    <i class="fa-brands fa-linkedin text-primary"></i> Linkedin <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </li>
             
             <li>
                 <a href="https://x.com/swaggat_dev?s=21" target="blank">
-                    <i class="fa-brands fa-square-x-twitter text-dark"></i> Twitter
+                    <i class="fa-brands fa-square-x-twitter text-dark"></i> Twitter <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </li>
 
             <li>
                 <a href="https://www.instagram.com/geraldthedev?igsh=MWE1ejhpa21sNGVlMQ%3D%3D&utm_source=qr" target="_blank">
-                    <i class="fa-brands fa-square-instagram"></i> Instagram
+                    <i class="fa-brands fa-square-instagram"></i> Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </li>
 

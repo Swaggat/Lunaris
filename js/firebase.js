@@ -265,3 +265,43 @@ window.login = function(event) {
 
 
 
+// ========================== PASSWORD RESET ==========================
+
+import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+// ====================== PASSWORD RESET ======================
+document.addEventListener("DOMContentLoaded", () => {
+  const resetForm = document.querySelector("#pwdResetModal form");
+  const resetEmailInput = document.getElementById("pwdResetEmail");
+  const messageEl = document.getElementById("pwdResetMessage");
+
+  if (resetForm) {
+    resetForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = resetEmailInput.value.trim();
+
+      try {
+        await sendPasswordResetEmail(auth, email);
+        // RESET MESSAGE
+        messageEl.innerHTML = `A link has been sent to ${email}, proceed to reset your password`;
+        console.log(`A link has been sent to ${email}, proceed to reset your password`);
+        messageEl.style.background = "green";
+        messageEl.style.color = "white";
+        
+      } catch (error) {
+        console.error("Password reset error:", error.message);
+        customFirebaseError(error, messageEl);
+        // messageEl.innerHTML = `
+        //   <p class="text-danger fw-bold text-center">
+        //     ⚠️ ${error.message}
+        //   </p>
+        // `;
+      }
+    });
+  }
+});
+
+
+
+
+
