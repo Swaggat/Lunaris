@@ -9,7 +9,7 @@ An enthusiast interested in elegant UI/UX design,
 Lunaris provides a hands-on example of best practices in modern web development.
 
 # FEATURES:
-. SECURE AUTHENTIFICATION: Sign-up, login, and logout flows powered by Firebase Authentication.
+. SECURE AUTHENTIFICATION: Sign-up, login, password reset and logout flows powered by Firebase Authentication.
 . RESPONSIVE DESIGN: Optimized for desktops, tablets, and mobile devices.
 . INTERACTIVE UI: Smooth, intuitive CSS and GSAP animations.
 . CLEAN & MAINATAINABLE CODE ARCHITECTURE: Modular JavaScript files for authentication and user page logic.
