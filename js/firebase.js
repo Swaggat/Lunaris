@@ -61,7 +61,7 @@ function customFirebaseError(error, messageEl) {
         messageEl.style.color = "white";
     }
 
-    console.error("Error code:", error.code, "| Firebase message:", error.message);
+    // console.error("Error code:", error.code, "| Firebase message:", error.message);
 }
 
 
@@ -128,7 +128,7 @@ window.signUp = function(event) {
    
 
     if (!emailInput || !pwdInput || !confrimPwdInput || !fullNameInput) {
-        console.error("Sign up inputs unavailable");
+        // console.error("Sign up inputs unavailable");
         messageEl.innerText = "⚠️ Please fill in all fields";
         messageEl.style.color = "red";
         return;
@@ -164,7 +164,7 @@ window.signUp = function(event) {
 
 
         // SUCCESS MESSAGE
-        console.log("User:", user);
+        // console.log("User:", user);
         messageEl.innerText = `Account created successfully for ${userName}`;
         messageEl.style.background = "green";
         messageEl.style.color = "white";
@@ -232,7 +232,7 @@ window.login = function(event) {
             const userName = email.split("@")[0];
 
             // SUCCESS MESSAGE
-            console.log("user:", user);
+            // console.log("user:", user);
             messageEl.innerText = `✅ Login successful!`;
             messageEl.style.color = "white";
             messageEl.style.background = "green";
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageEl.style.color = "white";
         
       } catch (error) {
-        console.error("Password reset error:", error.message);
+        // console.error("Password reset error:", error.message);
         customFirebaseError(error, messageEl);
         // messageEl.innerHTML = `
         //   <p class="text-danger fw-bold text-center">
