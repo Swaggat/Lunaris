@@ -32,7 +32,7 @@ auth.onAuthStateChanged(user => {
     console.log("User signed in:", user.email);
     firstCheck = false; // Prevent repeated logs
   } else if (!user && firstCheck) {
-    console.log("No user signed in yet");
+    // console.log("No user signed in yet");
     firstCheck = false; // Prevent repeated logs
   }
 });
